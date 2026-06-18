@@ -149,3 +149,17 @@ MongoDB is used because prescriptions may contain a varying number of medicines 
 # Database Design Conclusion
 
 The Smart Clinic Management System uses MySQL for structured clinic operations and MongoDB for flexible prescription management. This hybrid design improves scalability, maintainability, and performance while supporting both relational and document-oriented data requirements.
+
+## Design Considerations
+
+### Appointment Retention
+Patient appointment history should be retained even if a patient becomes inactive, as medical records may be required for future reference and compliance purposes.
+
+### Doctor Availability
+Doctor availability should be managed separately from appointments to prevent overlapping bookings and improve scheduling efficiency.
+
+### Prescription Storage
+Prescriptions are stored in MongoDB because different treatments may require varying numbers of medications, notes, and follow-up instructions. MongoDB provides flexibility for evolving prescription structures.
+
+### Data Integrity
+Foreign key relationships between patients, doctors, and appointments ensure referential integrity and prevent orphaned records.
