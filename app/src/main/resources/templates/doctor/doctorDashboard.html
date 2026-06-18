@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Doctor Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/doctorDashboard.css">
+</head>
+<body>
+<div class="container">
+    <header class="app-header">
+        <div class="brand">
+            <div class="logo">DR</div>
+            <div>
+                <div class="title">Doctor Dashboard</div>
+                <div class="muted">Appointments & Patients</div>
+            </div>
+        </div>
+        <div class="controls">
+            <input type="text" id="patientSearch" placeholder="Search Patient">
+            <input type="date" id="appointmentDate">
+        </div>
+    </header>
+
+    <main>
+        <section class="card" id="appointmentsSection">
+            <h2>Upcoming Appointments</h2>
+            <div id="appointmentList">
+                <!-- appointment cards -->
+            </div>
+            <div class="no-appointments" style="display:none">No appointments scheduled.</div>
+        </section>
+    </main>
+
+    <footer style="margin-top:18px;text-align:center;color:var(--muted);font-size:13px">© SmartCare</footer>
+</div>
+
+<script src="/js/doctorDashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+#controlsRow{display:flex;gap:12px;align-items:center;justify-content:space-between}
+
+#appointmentList{margin-top:18px}
+
+.appointment-card{padding:12px;border-radius:8px;background:#fff;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.appointment-card .left{display:flex;flex-direction:column}
+.appointment-card .time{color:var(--muted);font-size:13px}
+
+.no-appointments{padding:16px;text-align:center;color:var(--muted)}

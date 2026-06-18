@@ -1,0 +1,11 @@
+#controlsRow{display:flex;gap:12px;align-items:center;justify-content:space-between}
+
+#doctorList{margin-top:18px}
+
+.doctor-card{display:flex;flex-direction:column;gap:8px;padding:12px;border-radius:8px;background:#fff}
+.doctor-card .meta{display:flex;justify-content:space-between;align-items:center}
+.doctor-card .meta .spec{color:var(--muted);font-size:13px}
+.doctor-card .actions{display:flex;gap:8px}
+.doctor-card .actions button{padding:6px 8px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer}
+
+.empty{color:var(--muted);padding:16px;text-align:center}
