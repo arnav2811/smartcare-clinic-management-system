@@ -9,11 +9,9 @@ COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 
-# Make the wrapper executable (Windows file permissions sometimes get lost)
-RUN chmod +x ./mvnw
-
-# Download dependencies (this step is cached if pom.xml doesn't change)
-RUN ./mvnw dependency:go-offline -B
+# Make the wrapper executable and download dependencies
+RUN chmod +x ./mvnw && \
+    ./mvnw dependency:go-offline -B
 
 # Copy the project source code
 COPY src src

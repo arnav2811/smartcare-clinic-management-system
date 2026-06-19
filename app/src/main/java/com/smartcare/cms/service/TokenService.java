@@ -48,10 +48,10 @@ public class TokenService {
     }
 
     private Claims parseClaims(String token) {
-        return Jwts.parserBuilder()
-            .setSigningKey(signingKey)
+        return Jwts.parser()
+            .verifyWith((javax.crypto.SecretKey) signingKey)
             .build()
-            .parseClaimsJws(token)
-            .getBody();
+            .parseSignedClaims(token)
+            .getPayload();
     }
 }
