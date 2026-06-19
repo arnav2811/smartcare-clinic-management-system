@@ -1,0 +1,34 @@
+name: Frontend CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  lint-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Frontend Linters
+        run: npm install -g eslint stylelint htmlhint
+
+      - name: Lint HTML files
+        run: |
+          if [ -d "app/src/main/resources/templates" ]; then
+            htmlhint "app/src/main/resources/templates/**/*.html" || echo "HTML Hint warnings found"
+          fi
+
+      - name: Lint CSS and JS (Placeholder)
+        run: |
+          echo "Run ESLint for JS and Stylelint for CSS if applicable."
+          # eslint "**/*.js" || true
+          # stylelint "**/*.css" || true
